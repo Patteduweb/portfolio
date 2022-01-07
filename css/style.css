@@ -1,0 +1,1219 @@
+/* FONTS
+    font-family: 'Londrina Solid', cursive;
+    100/300/400/900
+    font-family: 'Poppins', sans-serif;
+    300/400/600/700
+*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	font-family: 'Poppins', sans-serif;
+	color : var(--noir);
+}
+/* =====================================Début class usuelles=============================================*/
+.col-1, .col-2, .col-2-5, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12{
+	float: left;
+}
+.col-1{
+	width: 8.33333333%;
+}
+.col-2{
+	width: 16.6666666%;
+}
+.col-2-5{
+	width: 20%;
+}
+.col-3{
+	width: 25%;
+}
+.col-4{
+	width: 33.3333333%;
+}
+.col-5{
+	width: 41.6666666%;
+}
+.col-6{
+	width: 50%;
+}
+.col-7{
+	width: 58.3333333%;
+}
+.col-8{
+	width: 66.6666666%;
+}
+.col-9{
+	width: 75%;
+}
+.col-10{
+	width: 83.3333333%;
+}
+.col-11{
+	width: 91.66666666%;
+}
+.col-12{
+	width: 100%;
+}
+.offset-1{
+	margin-left: 8.3333333333%;
+}
+.offset-2{
+	margin-left: 16.6666666%;
+}
+.offset-3{
+	margin-left: 25%;
+}
+.offset-4{
+	margin-left: 33.33333%;
+}
+.offset-5{
+	margin-left: 41.666666%;
+}
+.offset-6{
+	margin-left: 50%;
+}
+.row, .clear{
+	clear: both;
+	border: none;
+}
+img, video{
+	max-width: 100%;
+}
+:root{
+	--marron-fonce: #210002;
+	--marron-clair :  #8d4930;
+	--blanc: #fcf0e7;
+	--orange-fonce: #eb811f;
+	--orange-clair: #eb811f;
+	--noir: #2d2d2d;
+}
+.container{
+    width: 100%;
+	max-width: 1400px;
+    margin: 0 auto;
+	padding : 0;
+}
+body{
+	position: relative;
+    background-color : var(--marron-fonce);
+	height: 100vh;
+}
+/* ALERT */
+.alert{
+	opacity: 0;
+	position: inherit;
+	z-index: 15;
+	animation : 5s fadeOut;
+} 
+@keyframes fadeOut {
+    0% { opacity: 0;}
+	50% { opacity :1;}
+    100% { opacity: 0;}
+}
+.alert p{
+	z-index: 15;
+	background: var(--blanc);
+	color : var(--marron-fonce);
+	font-size: 20px;
+	padding: 20px 40px;
+	border-radius: 40px;
+	font-weight: 600;
+}
+/* scroll tu top */
+#scrollToTop{
+	display: none;
+	position: fixed;
+	z-index: 10;
+	right: 70px;
+	bottom: 70px;
+	width: 60px;
+	cursor: pointer;
+}
+#scrollToTop-bg, #scrollToTop-fleche{
+	transition: 0.3s;
+}
+.container-scroll:hover path{
+	opacity: 0.5;
+}
+/* MENU DESKTOP */
+#menu{
+	position: absolute;
+	top: 0;
+    right: 0;
+	width: 100%;
+	text-align: right;
+	height: 120px;
+	transition: height 0.4s;
+
+}
+#menu ul{
+	height: 60px;
+    position: relative;
+    z-index: 3;
+    padding-right: 20px;
+	margin-top: 20px;
+}
+#menu li{
+	display: inline-block;
+}
+#menu li a{
+	color : var(--blanc) ;
+	font-size : 20px;
+	font-family: 'Londrina Solid', cursive;
+    text-transform: uppercase;
+	font-weight: 300;
+	padding : 10px 20px;
+	margin: 0 20px;
+	line-height: 60px;
+	height: 60px;
+	letter-spacing: 1px;
+    text-decoration: none;
+	transition : 0.6s;
+	border-radius: 40px;
+}
+#menu li a:hover{
+	background-color: var(--blanc);
+	color : var(--marron-fonce);
+}
+#menu.fixed{
+	position: fixed !important;
+	z-index: 10;
+	background-color : #2B1A13;
+	height: 50px;
+	text-align: center;
+}
+#menu.fixed ul{
+	margin-top: 15px;
+}
+#menu.fixed ul li a{
+	line-height: 20px;
+	padding : 5px 10px;
+	font-size: 20px;
+	color: var(--orange-fonce);
+}
+#menu.fixed ul li a:hover{
+	color: var(--marron-fonce);
+	background-color: var(--orange-fonce);
+}
+/* MENU MOBILE */
+.burger-menu{
+	display : none;
+}
+.menu-mobile{
+	display: none;
+	position: fixed;
+	width: 100%;
+	top : 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	background: var(--marron-fonce);	
+}
+.burger-menu, .close-menu{
+	background:var(--marron-fonce);
+	height: 50px;
+	width: 50px;
+	line-height: 65px;
+	text-align: center;
+	border-radius: 50px;
+	z-index: 900;
+	position : fixed;
+	top : 30px;
+	right: 60px;
+	color : var(--blanc);
+}
+.burger-menu img{
+	margin-bottom: 18px;
+	width: 30px;
+	height: 30px;
+}
+.close-menu img{
+	margin-bottom: 010px;
+	width: 30px;
+	height: 30px;
+}
+.burger-menu:hover, .close-menu:hover{
+	color : var(--noir);
+}
+.close-menu{
+	z-index: 250;
+	line-height: 62px;
+}
+#menu-mobile ul{
+	margin: 160px 0 0 0;
+	padding-right: 30px;
+	list-style-type: none;
+	text-align: right;
+	text-align: center;
+}
+#menu-mobile ul li{
+	margin-left: 25px;
+}
+#menu-mobile ul li a{
+	font-family: 'Londrina Solid', cursive;
+	font-weight: 300;
+	font-size: 30px;
+	color : var(--orange-clair);
+	text-decoration: none;
+	line-height: 80px;
+	transition : 0.2s;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+}
+#menu-mobile ul a:hover{
+	opacity : 0.7;
+}
+/* HEADER */
+#fond-header{
+    width: 100%;
+    height: 100vh;
+}
+#fond-header-mobile{
+	display: none;
+	width: 100%;
+	height: 100vh;
+}
+#logo{
+	z-index: 5;
+	position: absolute;
+	top : 5px;
+	left : 60px;
+}
+#logo p{
+	display: inline-block;
+	line-height: 50px;
+	font-family: 'Londrina Solid', cursive;
+	font-weight: 300;
+	font-size: 20px;
+	text-transform: uppercase;
+	color : var(--blanc);
+
+}
+#logo-patte{
+	width: 200px;
+	margin-right: 7px;
+}
+#titre-header{
+	width: 100%;
+    position: absolute;
+    text-align: center;
+    color : var(--blanc);
+	top: 45%; left: 50%;
+ 	transform: translate(-50%, -50%);
+}
+#titre-header .br{
+	display: none;
+}
+h1{
+    font-family: 'Londrina Solid', cursive;
+    text-transform: uppercase;
+	font-size: 70px;
+	letter-spacing: 10px;
+	padding-bottom: 30px;
+	color : var(--blanc)
+}
+#titre-header h1{
+	line-height: 50px;
+}
+#titre-header h1 span{
+	font-family: 'Londrina Solid', cursive;
+    text-transform: uppercase;
+	font-size: 55px;
+	font-weight: 100;
+	color: #cccccc;
+}
+#titre-header h2{
+    font-family: 'Londrina Solid', cursive;
+	color : var(--blanc);
+	font-weight: 100;
+	font-size: 30px;
+	letter-spacing: 8px;
+	display: inline-block;
+	text-transform: uppercase;
+}
+#titre-header h2 span{
+	color :var(--blanc);
+}
+#titre-header p{
+	display: inline-block;
+	font-family: 'Londrina Solid', cursive;
+	color : var(--blanc);
+	font-weight: 100;
+	font-size: 50px;
+	letter-spacing: 15px;
+	padding: 0 30px;
+}
+#par-ici{
+	position: absolute;
+	bottom: -220px; left: 50%;
+ 	transform: translate(-50%, -50%);
+}
+#par-ici p{
+	display: block;
+	font-size: 20px;
+	letter-spacing: 3px;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+header{
+	position: relative;
+	background: url(../img/fond_header.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	margin-bottom: 125px;
+}
+header .fleche-bas{
+	width: 70px;
+	transition : 0.2s;
+	cursor: pointer;
+}
+header .fleche-bas:hover{
+	transform: scale(1.2);
+}
+header.header_{
+	position: absolute;
+}
+/* Qui suis-je */
+strong{
+	font-weight: 600;
+}
+#qui-suis-je{
+	padding-top: 125px;
+	overflow: hidden;
+	padding-bottom: 50px;
+}
+.fond-qui{
+	position: relative;
+	background-color : var(--blanc);
+	border-radius: 20px;
+	padding: 40px 60px ;
+}
+h2{
+	font-family: 'Londrina Solid', cursive;
+	font-size: 50px;
+	font-weight: 900;
+	color : var(--noir);
+	padding-bottom: 15px;
+	letter-spacing: 8px;
+}
+#qui-suis-je h2{
+	padding-bottom: 0;
+}
+#qui-suis-je h3{
+	font-family: 'Londrina Solid', cursive;
+	font-size: 30px;
+	font-weight: 100;
+	letter-spacing: 5px;
+	margin-top: 0;
+}
+p{
+	font-size: 17px;
+	line-height: 35px;
+	padding-top: 20px;
+}
+#qui-suis-je .lien-cv{
+	display: inline-block;
+	background-color: var(--orange-fonce);
+	color : var(--blanc);
+	padding : 15px 30px;
+	border-radius: 40px;
+	font-family: 'Londrina Solid', cursive;
+	font-weight: 300;
+	font-size: 25px;
+	margin-top: 25px;
+	text-decoration: none;
+	transition: 0.4s;
+}
+#qui-suis-je .lien-cv:hover{
+	background-color: var(--blanc);
+	color : var(--orange-fonce);
+}
+#portrait-simon{
+	position: absolute;
+	right: -53px;
+	top: -78px;
+	width: 350px;
+}
+#griffe-portrait{
+	position: absolute;
+	width: 400px;
+	bottom: -35px;
+	right: -87px;
+}
+/* MES COMPETENCES NEW */
+#mes-competences{
+	overflow: hidden;
+	padding-bottom: 50px;
+}
+#mes-competences .competence{
+	padding : 0 40px;
+	text-align: center;
+	position: relative;
+	z-index: 5;
+}
+#mes-competences .competence img{
+	max-height: 100px;
+	margin-bottom: 40px;
+}
+#mes-competences .competence h3{
+	font-size: 30px;
+	letter-spacing: 1px;
+	color :var(--orange-fonce);
+	font-family: 'Londrina Solid', cursive;
+	font-weight: 300;
+}
+#mes-competences .competence p{
+	color : var(--blanc);
+
+}
+/* Mes compétences */
+#separateur{
+	margin-top: 150px;
+}
+#mes-competences .container-comp{
+	position: relative;
+}
+#deco-comp-1{
+	z-index: -1;
+	position: absolute;
+	max-height: 500px !important;
+	width: 250px;
+	top: 138px;
+	left: 50px;
+	rotate: 61deg;
+}
+#deco-comp-2{
+	z-index: -1;
+	position: absolute;
+	max-height: 500px !important;
+	width: 300px;
+	top: 200px;
+	left: 0;
+}
+#deco-comp-3{
+	z-index: -1;
+	position: absolute;
+	max-height: 500px !important;
+	width: 350px;
+	top: 99px;
+	right: 6px;
+	rotate: 112deg;
+}
+/* PORTFOLIO TEST */
+#portfolio .bloc-port{
+	margin: 0 20px;
+	text-align: center;
+}
+#portfolio .bloc-port-img{
+	position: relative;
+	border-radius: 15px;
+	transition: filter 0.4s;
+	border: 3px solid transparent;
+	overflow: hidden;
+	transition: 0.4s;
+}
+#portfolio .bloc-port-img p{
+	position : absolute;
+	z-index: 0;
+	opacity : 0;
+	color :  var(--blanc);
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	font-weight: 500;
+	transition : 0.4s;
+}
+#portfolio .bloc-port-img:hover{
+	border-color: var(--orange-fonce);
+}
+#portfolio .bloc-port-img img{
+	transition: 0.4s;
+}
+#portfolio .bloc-port-img:hover p{
+	opacity: 1;
+}
+#portfolio .bloc-port-img:hover img{
+	opacity : 0.2;
+	transform: scale(110%);
+}
+#portfolio .bloc-port h4{
+	font-family: 'Londrina Solid', cursive;
+	font-weight: 200;
+	letter-spacing: 3px;
+	font-size: 30px;
+	color : var(--blanc);
+
+}
+#portfolio .button-folio{
+	font-family: 'Londrina Solid', cursive;
+	text-align: center;
+	display: inline-block;
+	margin: 20px;
+	border-radius: 30px;
+	font-size: 20px;
+	padding : 10px 20px;
+	background: var(--orange-fonce);
+	color: var(--marron-fonce);
+	text-decoration: none;
+	font-weight: 300;
+	transition: 0.4s;
+}
+#portfolio .button-folio:hover{
+	background-color : transparent;
+	color : var(--orange-fonce);
+}
+#portfolio .container-portfolio{
+	margin-top: 50px;
+}
+#portfolio h2, #contact h2, #mes-competences h2{
+	color : var(--orange-clair);
+	padding-left: 60px;
+	margin: 150px 0 0 0;
+}
+.margin-top{
+	margin-top: 80px;
+}
+/* SECTION-PORTFOLIO */
+.section-portfolio h1{
+	line-height: 70px;
+	font-size: 50px;
+	text-align: center;
+	margin-top: 50px;
+	letter-spacing: 3px;
+}
+.section-portfolio{
+	position: relative;
+	z-index: 1;
+	padding-top: 150px;
+}
+.section-portfolio .fond-crea{
+	position: relative;
+	padding-left: 40px;
+	border-left: 3px solid #d4c3b6;
+}
+.section-portfolio h3{
+	font-family: 'Londrina Solid', cursive;
+	font-weight: 300;
+	font-size: 60px;
+}
+.section-portfolio .date-folio{
+	font-size: 17px;
+	font-style: italic;
+	padding : 0;
+}
+.section-portfolio .txt-folio{
+	font-size: 17px;
+	line-height: 35px;
+	padding-top: 20px;
+	padding : 0;
+}
+.section-portfolio .description{
+	padding-right: 40px;
+}
+.section-portfolio h4{
+	margin-top: 50px;
+	font-family: 'Londrina Solid', cursive;
+	font-weight: 300;
+	font-size: 40px;
+}
+.section-portfolio .missions{
+	text-transform: uppercase;
+	padding-top: 0;
+}
+.section-portfolio #griffe-portrait{
+	width: 250px;
+	bottom: -32px;
+    right: -35px;
+}
+.section-portfolio .crea h3{
+	font-family: 'Poppins', sans-serif;
+	text-align: center;
+	font-size: 20px;
+	color : var(--marron-fonce);
+	font-weight: 500;
+	margin-top: 20px;
+}
+.section-portfolio .bloc-port-img{
+	position: relative;
+	border-radius: 20px;
+	transition: 0.4s;
+}
+.section-portfolio .mobile .bloc-port-img{
+	max-width: 300px;
+	margin : 0 auto;
+	
+}
+.section-portfolio .bloc-crea{
+	margin-bottom: 80px;
+}
+.section-portfolio .border-radius{
+	border-radius: 20px;
+}
+.section-portfolio .button{
+	display: inline-block;
+	margin-top: 10px;
+	background-color: var(--orange-fonce);
+	padding: 10px 20px;
+	color : var(--blanc);
+	font-size: 20px;
+	text-decoration: none;
+	border-radius: 30px;
+	transition: 0.4s;
+}
+.section-portfolio .button:hover{
+	color : var(--orange-fonce);
+	background-color: var(--blanc);
+
+}
+/* CONTACT */
+.c_center{
+	text-align: center;
+}
+.g-recaptcha{
+	display: inline-block;
+}
+#contact .contact{
+	max-width: 900px;
+	margin: 0 auto;
+}
+#contact h2{
+	text-align: center;
+}
+#contact p{
+	color : var(--orange-clair);
+}
+
+/* FORMULAIRE */
+#contact form{
+	position: inherit;
+	z-index: 10;
+	background-color : var(--blanc);
+	padding: 60px 60px;
+	border-radius: 20px;
+	margin-top: 50px;
+}
+#contact label{
+	color:var(--noir);
+	font-size: 15px;
+	font-weight: 600;
+	padding-left: 10px;
+}
+#contact input, #contact textarea{
+	min-width: 100%;
+	max-width: 100%;
+	width: 100%;
+	padding: 10px 10px;
+	border-radius: 10px;
+	background: var(--blanc);
+	color : var(--marron-fonce);
+	border: 2px solid #948586;
+	margin-bottom: 50px;
+}
+#contact textarea{
+	min-height: 200px;
+}
+#contact input:focus, #contact textarea:focus{
+	outline : none;
+	border-color : var(--orange-fonce);
+}
+#contact .submit{
+	min-width: 100px;
+	width: 150px;
+	font-size: 20px;
+	font-weight: 600;
+	display: inherit;
+	margin: 0 auto;
+	color: var(--blanc);
+	border: none;
+	background : var(--orange-clair);
+	border-radius: 30px;
+	transition : 0.4s;
+}
+#contact .submit:hover{
+	background: var(--blanc);
+	color : var(--orange-clair)
+}
+/* FOOTER */
+footer{
+	position: sticky;
+	z-index: 2;
+	text-align: center;
+	margin-top: 400px;
+	width: 100%;
+}
+footer p{
+	position: inherit;
+	color :var(--marron-fonce);
+	z-index: 5;
+	font-size: 18px;
+	padding-bottom: 40px;
+	padding-top: 10px;
+}
+footer img{
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+footer .txt-rs{
+	font-size: 17px;
+	display: inline;
+	padding-bottom: 10px;
+}
+footer .linkedin{
+	position: relative;
+	width: 30px;
+	margin-left: 10px;
+}
+/* RESPONSIVE */
+@media all and ( max-width: 1400px ){
+	#menu li a {
+		margin : 0;
+	}
+	footer{
+		margin-top: 250px;
+	}
+	footer p{
+		margin-bottom: 0;
+	}
+}
+@media all and ( max-width: 1250px ){
+	#menu{
+		display: none;
+	}
+	.burger-menu{
+		display: inline-block;
+	}
+	#par-ici{
+		bottom : -145px;
+	}
+	#scrollToTop{
+		display: none;
+		position: fixed;
+		z-index: 10;
+		right: 40px;
+		bottom: 40px;
+		width: 60px;
+		cursor: pointer;
+	}
+	#portfolio, #mes-competences{
+		padding : 0 40px;
+	}
+	footer p{
+		padding-bottom: 35px;
+	}
+}
+@media all and ( max-width: 1050px ){
+	.container{
+		max-width: 900px;
+	}
+	#separateur{
+		margin-top: 100px;
+	}
+	#par-ici{
+		bottom : -160px;
+	}
+	#portrait-simon{
+		right: -94px;
+		top: -62px;
+	}
+	#mes-competences .competence h3{
+		font-size : 25px;
+	}
+	#mes-competences .competence p{
+		font-size : 16px;
+	}
+	#deco-comp-1{
+		width: 200px;
+		top : 181px;
+	}
+	#deco-comp-2{
+		width: 300px;
+		top: 223px;
+		left : 0px;
+		rotate : 166deg;
+	}
+	#deco-comp-3{
+		top: 175px;
+	}
+	#comp-container .date{
+		font-size: 18px;
+	}
+	#comp-container p.titre_cv{
+		font-size: 26px;
+	}
+	#comp-container .texte_cv{
+		font-size: 17px;
+	}
+	#mes-competences h2{
+		margin-top : 100px;
+	}
+	#portfolio .crea-portfolio{
+		padding : 30px;
+		margin-top: 25px;
+	}
+	#portfolio .desc-crea{
+		top: -35px;
+	}
+	#becloo .deco{
+		bottom: -20px;
+	}
+	#lm .deco{
+		bottom: -118px;
+		left: -70px;
+	}
+	#bar .deco{
+		bottom: -45px;
+		left: -85px;
+	}
+	#pw .deco{
+		bottom: -24px;
+	left: -89px;
+	}
+	footer{
+		margin-top : 200px;
+		background-color : var(--blanc);
+	}
+	footer .bg-footer{
+		width: 100%;
+		bottom: 100px;
+	}
+	footer p{
+		padding-bottom: 28px;
+	}
+}
+@media all and ( max-width: 800px ){
+	/* PAGE SECTION PORTFOLIo*/
+	.section-portfolio h1{
+		font-size: 40px;
+	}
+	.section-portfolio .fond-qui{
+		padding : 20px 40px;
+	}
+	.section-portfolio .col-5, .section-portfolio .col-7{
+		width: 100%;
+	}
+	.section-portfolio .description{
+		border-bottom : 3px solid #d4c3b6;
+		padding-bottom: 30px;
+	}
+	.section-portfolio .fond-crea{
+		margin-top: 50px;
+		border: none;
+		padding-left : 0;
+	}
+	#mes-competences .container-comp{
+		margin-top: 100px;
+	}
+	#mes-competences .competence{
+		width: 100%;
+		margin-bottom : 100px;
+	}
+	/* */
+	#contact .col-8{
+		width: 100%;
+	}
+	#contact .offset-2{
+		margin : 0;
+	}
+	#contact form{
+		margin: 0 20px;
+		padding: 30px;
+	}
+	.container{
+		max-width: 700px;
+		margin : 0 auto;
+	}
+	#logo-patte{
+		width: 150px;
+		margin-right: 5px;
+	}
+	h1{
+		font-size: 48px;
+	}
+	#titre-header h1{
+		line-height: 35px ;
+	}
+	#titre-header h1 span{
+		font-size: 37px ;
+	}
+	#titre-header h2{
+		font-size: 25px;
+		margin : 5px 0;
+		line-height: 25px;
+	}
+	#mes-competences h2, #portfolio h2, #contact h2{
+		padding-left: 0;
+	}
+	#qui-suis-je .fond-qui{
+		width: 90%;
+	}
+	#portfolio h2{
+		margin-top: 50px;;
+	}
+	#titre-header .sep_h2{
+		display: none;
+	}
+	#titre-header .br{
+		display: block;
+	}
+	#fond-header{
+		display: none;
+	}
+	#fond-header-mobile{
+		display: block;
+	}
+	#qui-suis-je .col-9,#qui-suis-je .col-10, #qui-suis-je .col-11{
+		width: 100%;
+	}
+	#portrait-simon{
+		position: inherit;
+		bottom: 0; left: 50%;
+		transform: translate(-50%, 80px);
+	}
+	#griffe-portrait{
+		right: -85;
+	}
+
+	#deco-comp-1{
+		width: 300px;
+		left : 177px;
+		top: 105px;
+	}
+	#deco-comp-2{
+		left : 171px;
+		width: 340px;
+		top: 157px;
+		rotate : 200deg;
+	}
+	#deco-comp-3{
+		width: 400px;
+		top: 137px;
+		right: 100px;
+		rotate : 310deg;
+	}
+	#mes-competences h2, #mes-competences h3{
+		padding-left: 40px;
+	}
+	#mes-competences h3{
+		margin-top: 50px;
+	}
+	#mon-parcours h3{
+		padding-left: 0;
+	}
+	#mon-parcours .col-10, #mon-parcours .col-9{
+		width: 100%;
+	}
+	#mes-competences .picto-comp{
+		width: 50%;
+		margin : 40px 0;
+	}
+
+	#mes-competences .col-2{
+		width: 100%;
+	}
+
+	#comp-container .date{
+		font-size: 25px;
+		text-align: left;
+	}
+	#comp-container p.titre_cv{
+		padding-top: 0;
+		margin-top: 0;
+		font-size: 26px;
+	}
+	#comp-container .texte_cv{
+		font-size: 17px;
+	}
+
+	#portfolio{
+		padding : 0 40px;
+	}
+	#portfolio .col-4{
+		width: 100%;
+	}
+	#portfolio .desc-crea{
+	    top: -55px;
+		width: 100%;
+	}
+	#portfolio .crea-portfolio{
+		padding-left : 0;
+		padding-right: 0;
+	}
+	#portfolio .image-folio{
+		max-width: 400px;
+		margin: 0 auto;
+	}
+	#portfolio .image-folio img{
+		width: 100%;
+	}
+	#becloo, #lm, #bar, #pw{
+		margin-bottom: 30px;
+	}
+	#becloo .deco{
+		bottom: -236px;
+	}
+	#lm .deco{
+		bottom: -350px;
+	}
+	#bar .deco{
+		bottom: -112px;
+	}
+	#pw .deco{
+		bottom: -100px;
+	}
+	#separateur{
+		margin-top : 75px;
+	}
+	#contact h2{
+		margin-top: 175px;
+		padding-left : 40px;
+		padding-bottom: 30px;
+	}
+	#contact .linkedin, #contact .mail{
+		width: 100%;
+	}
+	footer{
+		margin-top : 250px;
+	}
+	footer .bg-footer{
+		width: 100%;
+		bottom: 88px;
+	}
+	footer p{
+		margin-bottom: 0;
+		padding-bottom: 8px;
+	}
+}
+@media all and ( max-width: 500px ){
+	.section-portfolio .container{
+		width: 90%;
+	}
+	.section-portfolio h1{
+		font-size: 30px;
+		line-height: 40px;
+		letter-spacing: 1px;
+	}
+	.section-portfolio .description h3{
+		font-size: 35px;
+	}
+	.section-portfolio .description h4{
+		font-size: 30px;
+	}
+	.section-portfolio .description{
+		padding-right:  0;
+	}
+	.section-portfolio .description p{
+		font-size: 15px;
+		line-height: 25px;
+	}
+	.container{
+		max-width: 400px;
+		margin : 0 auto;
+	}
+	#titre-header h1{
+		margin-top: 15px;
+	}
+	#titre-header h2{
+		font-size: 25px;
+		letter-spacing: 5px;
+		margin : 5px 0;
+	}
+	#par-ici p{
+		letter-spacing: 3px;
+		padding: 0;
+		cursor: pointer;
+	}
+	#qui-suis-je h3{
+		font-size: 15px;
+	}
+	.burger-menu, .close-menu{
+		right: 30px;
+	}
+	#scrollToTop{
+		right: 30px;
+		bottom : 100px;
+		width: 50px;
+	}
+	#logo{
+		left: 35px;
+	}
+	#logo-patte{
+		margin-right: 8px;
+	}
+	#qui-suis-je{
+		padding-top : 100px;
+	}
+	#qui-suis-je .fond-qui{
+		padding : 30px 30px;
+	}
+	#qui-suis-je h2{
+		font-size: 35px;
+		letter-spacing: 2px;
+	}
+	#qui-suis-je p{
+		font-size: 15px;
+		line-height: 25px;
+	}
+	#griffe-portrait {
+		width: 250px;
+		right: -25px;
+	}
+	#mes-competences, #portfolio{
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	#mes-competences .picto-comp{
+		width: 100%;
+		margin : 10px 0;
+	}
+	#mes-competences .picto-comp img{
+		height: 70px;
+	}
+	#mes-competences h3{
+		font-size: 26px ;
+		letter-spacing: 3px;
+		margin-bottom: 40px;
+		padding-left: 0;
+	}
+	#mes-competences .competence h3{
+		margin: 0;
+	}
+	#deco-comp-1{
+		left: -69px;
+	}
+	#portfolio h3{
+		font-size: 30px;
+		letter-spacing: 3px;
+	}
+	#contact h2, #portfolio h2, #mes-competences h2{
+		font-size: 35px;
+		letter-spacing: 5px;
+		padding-left: 0;
+	}
+	#contact form{
+		margin: 0 20px;
+		padding: 40px;
+	}
+	footer{
+		background-color : var(--blanc);
+
+	}
+	footer .bg-footer{
+		width: 100%;
+		bottom: 95px;
+	}
+	footer p{
+		font-size: 17px;
+		padding-top : 0;
+		padding-bottom: 30px;
+	}
+}
